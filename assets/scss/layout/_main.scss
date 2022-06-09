@@ -19,7 +19,7 @@
 	justify-content: center;
 
 	& .type__title{
-		background-color: rgb(155, 225, 193);
+		background-color: $color_secondary_blue;
 		margin: 0.5vw;
 		width: 25vw;
 		height: 20vh;
@@ -35,7 +35,7 @@
 	display: flex;
 	margin: 0.5vw;
 	padding: 0.5vw;
-	background-color: rgb(197, 227, 243);
+	background-color: $color_secondary_golden;
 
 	& p {
 		flex: 1;
