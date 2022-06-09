@@ -412,7 +412,7 @@ header {
 }
 
 .type .type__title {
-  background-color: #9be1c1;
+  background-color: #4D3CCD;
   margin: 0.5vw;
   width: 25vw;
   height: 20vh;
@@ -434,7 +434,7 @@ header {
   display: flex;
   margin: 0.5vw;
   padding: 0.5vw;
-  background-color: #c5e3f3;
+  background-color: #D3D6B1;
 }
 
 .film p {
