@@ -1,0 +1,48 @@
+.main{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-bottom: 200px;
+}
+
+.type__container{
+	display: flex;
+	align-items:stretch;
+	justify-content: space-between;
+	padding: 0px;
+}
+
+.type{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	& .type__title{
+		background-color: rgb(155, 225, 193);
+		margin: 0.5vw;
+		width: 25vw;
+		height: 20vh;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.film {
+	width: 76vw;
+	display: flex;
+	margin: 0.5vw;
+	padding: 0.5vw;
+	background-color: rgb(197, 227, 243);
+
+	& p {
+		flex: 1;
+		margin: 0px;
+	}
+
+	& span {
+		padding: 0px;
+	}
+}

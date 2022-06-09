@@ -1,0 +1,7 @@
+header{
+	height: 30vh;
+	@extend %flex-center;
+	font-weight: 700;
+	font-size: 5rem;
+	color:$color_secondary_golden;
+}
