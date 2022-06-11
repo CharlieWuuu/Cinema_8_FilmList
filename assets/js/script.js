@@ -22,9 +22,9 @@ let lastThis = '';
 
 $(function () {
   // 隱藏除了 id=introduction 以外的區塊
-  $('.film__type').attr('style', 'display:none');
-  // 函式：點擊.type__title後
+  $('.film__type').attr('style', 'display:block');
 
+  // 函式：點擊.type__title後
   $('.type__title').click(function () {
     const showFilm = $(this).attr('href');
     console.log(showFilm);

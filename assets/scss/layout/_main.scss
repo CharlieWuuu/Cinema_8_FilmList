@@ -1,48 +1,77 @@
 .main{
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	@extend %flex-center;
 	flex-direction: column;
-	margin-bottom: 200px;
+	margin: 50px auto 200px auto;
+	width: 90%;
+	max-width: 1200px;
 }
 
 .type__container{
-	display: flex;
-	align-items:stretch;
-	justify-content: space-between;
-	padding: 0px;
-}
+	@extend %flex-center;
+	width: 100%;
+	margin: 50px 0 20px 0;
 
-.type{
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	.type__title{
+		@extend %flex-center;
+		width: 350px;
+		height: 260px;
+		border-radius: 30px;
+		overflow: hidden;
+		position: relative;
+		background-color:rgba(71, 71, 71, 0.5);
+		transition:1s background-color;
 
-	& .type__title{
-		background-color: $color_main;
-		margin: 0.5vw;
-		width: 25vw;
-		height: 20vh;
+		& > img{
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+			z-index: -2;
+			transition:1s transform;
+		}
 
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		// active是js控制用
+		&:hover, &.active{
+			background-color:rgba(71, 71, 71, 0.2);
+			& > img{
+				transform: scale(1.1,1.1);
+			}
+		}
+
+		& > .title__container{
+			position: absolute;
+			@extend %flex-center;
+			flex-direction: column;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			color: white;
+			z-index: 10;
+			font-size: 2rem;
+		}
+	}
+	.type__line{
+		border: 0.5px solid rgba(255, 255, 255, 0.4);
+		width: 0px;
+		height: 200px;
+		margin: 0 4%;
 	}
 }
 
 .film {
-	width: 76vw;
+	width: 88vw;
+	max-width: 1200px;
 	display: flex;
-	margin: 0.5vw;
-	padding: 0.5vw;
-	background-color: $color_secondary_golden;
+	border-bottom: 1px solid $color_secondary_white;;
 
 	& p {
 		flex: 1;
-		margin: 0px;
+		margin: 10px;
+		color: $color_secondary_white;
 	}
 
 	& span {
-		padding: 0px;
+		margin: 10px;
+		color: $color_secondary_white;
 	}
 }

@@ -62,7 +62,7 @@
           </li>
           <li onclick="dropDown(this)">
             <a
-              ><p>節目介紹 <i class="fas fa-angle-down"></i></p>
+              ><p>節目介紹<i class="fas fa-angle-down"></i></p>
             </a>
             <div class="menu__container" style="display: none">
               <a class="menu" href="https://charliewuuu.github.io/Cinema_8_FilmList/">
@@ -105,20 +105,40 @@
         </ul>
       </article>
     </nav>
-    <header class="title__container">
-      <h1>影片清單</h1>
+    <header class="header">
+      <div class="title__container">
+        <h1>Movie Lists</h1>
+        <div class="ZHtitle__contaitner">
+          <div class="ZHtitle__line"></div>
+          <h2>影片清單</h2>
+        </div>
+      </div>
     </header>
     <main class="main">
       <article class="type__container" id="type__container1">
-        <section class="type">
-					<div class="type__title" href="T01">開閉幕片 .type__title #T01</div>
-          </section>
+        <!-- ↓先開啟active，之後弄js比較容易看到↓ -->
+        <section class="type__title active" href="T01">
+          <img src="./assets/image/T01.jpeg" alt="" class="filmImg">
+          <div class="title__container">
+            <p>開閉幕片</p>
+            <p><i class="fas fa-angle-down"></i></p>
+          </div>
         </section>
-        <section class="type">
-          <div class="type__title"  href="T03">特別放映 #T03</div>
+        <div class="type__line"></div>
+        <section class="type__title" href="T01">
+          <img src="./assets/image/T03.jpeg" alt="" class="filmImg">
+          <div class="title__container">
+            <p>特別放映</p>
+            <p><i class="fas fa-angle-down"></i></p>
+          </div>
         </section>
-        <section class="type">
-          <div class="type__title"  href="T04">SURPRISE FILM #T04</div>
+        <div class="type__line"></div>
+        <section class="type__title"  href="T04">
+          <img src="./assets/image/T04.jpeg" alt="" class="filmImg">
+          <div class="title__container">
+            <p>SURPRISE FILM</p>
+            <p><i class="fas fa-angle-down"></i></p>
+          </div>
         </section>
       </article>
 			<article class="film__type" id="T01">
@@ -127,16 +147,29 @@
 			</article>
 			<article class="film__type" id="T04">
 			</article>
-			<article class="type__container" id="type__container1">
-        <section class="type">
-					<div class="type__title" href="T05">當代奇幻 #T05</div>
-          </section>
+			<article class="type__container" id="type__container2">
+        <section class="type__title" href="T05">
+          <img src="./assets/image/T05.jpeg" alt="" class="filmImg">
+          <div class="title__container">
+            <p>當代奇幻</p>
+            <p><i class="fas fa-angle-down"></i></p>
+          </div>
         </section>
-        <section class="type">
-          <div class="type__title" href="T06">非一般愛情 #T06</div>
+        <div class="type__line"></div>
+        <section class="type__title" href="T06">
+          <img src="./assets/image/T06.jpeg" alt="" class="filmImg">
+          <div class="title__container">
+            <p>非一般愛情</p>
+            <p><i class="fas fa-angle-down"></i></p>
+          </div>
         </section>
-        <section class="type">
-          <div class="type__title" href="T07">喜劇萬花筒 #T07</div>
+        <div class="type__line"></div>
+        <section class="type__title" href="T07">
+          <img src="./assets/image/T07.jpeg" alt="" class="filmImg">
+          <div class="title__container">
+            <p>喜劇萬花筒</p>
+            <p><i class="fas fa-angle-down"></i></p>
+          </div>
         </section>
       </article>
 			<article class="film__type" id="T05">
@@ -145,16 +178,29 @@
 			</article>
 			<article class="film__type" id="T07">
 			</article>
-			<article class="type__container" id="type__container1">
-        <section class="type">
-					<div class="type__title" href="T08">罪悚快 #T08</div>
-          </section>
+			<article class="type__container" id="type__container3">
+        <section class="type__title" href="T08">
+          <img src="./assets/image/T08.jpeg" alt="" class="filmImg">
+          <div class="title__container">
+            <p>罪悚快</p>
+            <p><i class="fas fa-angle-down"></i></p>
+          </div>
         </section>
-        <section class="type">
-          <div class="type__title" href="T09">東瀛狂想 #T09</div>
+        <div class="type__line"></div>
+        <section class="type__title" href="T09">
+          <img src="./assets/image/T09.jpeg" alt="" class="filmImg">
+          <div class="title__container">
+            <p>東瀛狂想</p>
+            <p><i class="fas fa-angle-down"></i></p>
+          </div>
         </section>
-        <section class="type">
-          <div class="type__title" href="T11">影迷許願池 #T11</div>
+        <div class="type__line"></div>
+        <section class="type__title" href="T11">
+          <img src="./assets/image/T11.jpeg" alt="" class="filmImg">
+          <div class="title__container">
+            <p>影迷許願池</p>
+            <p><i class="fas fa-angle-down"></i></p>
+          </div>
         </section>
       </article>
 			<article class="film__type" id="T08">
@@ -163,23 +209,36 @@
 			</article>
 			<article class="film__type" id="T11">
 			</article>
-			<article class="type__container" id="type__container1">
-        <section class="type">
-					<div class="type__title" href="T12">焦點導演：賈克大地 #T12</div>
-          </section>
+			<article class="type__container" id="type__container4">
+        <section class="type__title" href="T12">
+          <img src="./assets/image/T12.jpeg" alt="" class="filmImg">
+          <div class="title__container">
+            <p>焦點導演：賈克大地</p>
+            <p><i class="fas fa-angle-down"></i></p>
+          </div>
         </section>
-        <section class="type">
-          <div class="type__title" href="T13">金馬大舞廳 #T13</div>
+        <div class="type__line"></div>
+        <section class="type__title" href="T13">
+          <img src="./assets/image/T13.jpeg" alt="" class="filmImg">
+          <div class="title__container">
+            <p>金馬大舞廳</p>
+            <p><i class="fas fa-angle-down"></i></p>
+          </div>
         </section>
-        <section class="type">
-          <div class="type__title" href="T14">神祕影片 #T14</div>
+        <div class="type__line"></div>
+        <section class="type__title" href="T14">
+          <img src="./assets/image/T14.jpeg" alt="" class="filmImg">
+          <div class="title__container">
+            <p>神祕影片</p>
+            <p><i class="fas fa-angle-down"></i></p>
+          </div>
         </section>
       </article>
 			<article class="film__type" id="T12">
 			</article>
 			<article class="film__type" id="T13">
 			</article>
-				<article class="film__type" id="T14">
+			<article class="film__type" id="T14">
 			</article>
     </main>
     <footer class="footer">
