@@ -4468,3 +4468,27 @@ filmData.list = [
     countryEN4: '0',
   },
 ];
+
+filmData.map = new Map();
+for (i = 0; i < filmData.list.length; i++) {
+  fid = filmData.list[i].fid;
+  fdata = filmData.list[i];
+
+  //搜尋是否已經有同一個fid的場次array
+  fid_array = filmData.map.get(fid);
+
+  //假如沒有找到,新增一個陣列
+  if (fid_array == null) fid_array = [];
+  //將目前的film data 放到陣列裡面
+  fid_array.push(fdata);
+  //放回map中
+  filmData.map.set(fid, fid_array);
+}
+
+//透過fid取得對應的時段
+function getFilmTimelineListByFId(fid) {
+  // console.log(filmData.map.size);
+  flist = filmData.map.get(fid);
+  if (flist == null) return [];
+  return flist;
+}

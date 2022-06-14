@@ -61,17 +61,42 @@
 .film {
 	width: 88vw;
 	max-width: 1200px;
-	display: flex;
-	border-bottom: 1px solid $color_secondary_white;;
+	@extend %flex-center;
+	border-bottom: 1px solid $color_secondary_white;
 
-	& p {
+	p {
 		flex: 1;
 		margin: 10px;
 		color: $color_secondary_white;
+		a{
+			text-decoration: none;
+			color: $color_secondary_white;
+		}
 	}
 
-	& span {
-		margin: 10px;
-		color: $color_secondary_white;
+	#timelineList{
+		text-align:right;
+		padding: 10px;
+
+		.timelineList__container{
+			background-color: $color_main;
+			margin: 5px;
+			padding: 4px 5px;
+			@extend %flex-center;
+			justify-content: space-between;
+
+			span {
+				padding: 0 5px;
+				color: $color_secondary_white;
+			}
+
+			.timelineCinema{
+				flex:1;
+			}
+
+			.timelineFav{
+				color:rgba(0, 0, 0, 0.2);
+			}
+		}
 	}
 }
