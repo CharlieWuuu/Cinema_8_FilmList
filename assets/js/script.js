@@ -112,7 +112,7 @@ function showClicked() {
 
   // 檢查：瀏覽器暫存片單(obj)所有資料
   for (i = 0; i < localData.length; i++) {
-    chosenId = localData[i].fid;
+    chosenId = localData[i].full_id;
     // 判斷：是否有預選id，有的話欲渲染片單的HTML變灰色
     const clickedHTML = document.querySelector('#' + chosenId);
     if (clickedHTML != null) clickedHTML.style.color = '#EA5136';
@@ -130,7 +130,7 @@ function chooseFavorite(clickedId) {
   // 檢查：瀏覽器暫存片單(obj)所有資料
   for (i = 0; i < localData.length; i++) {
     // 判斷：是否有已點擊的id這部
-    if (clickedId == localData[i].fid) {
+    if (clickedId == localData[i].full_id) {
       current_i = i;
       check = '已經有這部片';
       break;
@@ -145,7 +145,7 @@ function chooseFavorite(clickedId) {
     const clickedHTML = document.querySelector('#' + clickedId);
     clickedHTML.style.color = 'rgba(0, 0, 0, 0.2)';
   } else if (check == '還沒有這部片') {
-    localData.push({ fid: clickedId });
+    localData.push({ full_id: clickedId });
     localStorage.setItem('片單', JSON.stringify(localData));
     // 渲染：已選片單變紅色
     showClicked();
