@@ -1,3 +1,19 @@
+// 渲染加入最愛的資料
+// 變數：取得本機儲存空間
+const localData = JSON.parse(localStorage.getItem('片單'))
+  ? JSON.parse(localStorage.getItem('片單'))
+  : [];
+
+// 函式：載入時，顯示已選片單數量
+function showFilmAmount() {
+  if (localData.length == 0) {
+    document.getElementById('film_amount').style.display = 'none';
+  } else {
+    document.getElementById('film_amount').innerText = localData.length;
+  }
+}
+showFilmAmount();
+
 // 目的：渲染片單到目標位置
 // 變數：要渲染的片單HTML
 const filmHTML = `
@@ -75,18 +91,18 @@ $('.type__title').click(function () {
   }
 });
 
-// 變數：瀏覽器暫存片單(obj)，有的話讀取，沒有的話顯示空的陣列
-const filmFavoriteData = JSON.parse(localStorage.getItem('片單'))
-  ? JSON.parse(localStorage.getItem('片單'))
-  : [];
+// // 變數：瀏覽器暫存片單(obj)，有的話讀取，沒有的話顯示空的陣列
+// const filmFavoriteData = JSON.parse(localStorage.getItem('片單'))
+//   ? JSON.parse(localStorage.getItem('片單'))
+//   : [];
 
-console.log(filmFavoriteData);
+// console.log(filmFavoriteData);
 
-// 函式：載入時，顯示已選片單數量
-function showFilmAmount() {
-  document.getElementById('film_amount').innerText = filmFavoriteData.length;
-}
-showFilmAmount();
+// // 函式：載入時，顯示已選片單數量
+// function showFilmAmount() {
+//   document.getElementById('film_amount').innerText = filmFavoriteData.length;
+// }
+// showFilmAmount();
 
 // 函式：載入時，已選片單變紅色
 function showClicked() {
@@ -95,8 +111,8 @@ function showClicked() {
   console.log(chosenId);
 
   // 檢查：瀏覽器暫存片單(obj)所有資料
-  for (i = 0; i < filmFavoriteData.length; i++) {
-    chosenId = filmFavoriteData[i].fid;
+  for (i = 0; i < localData.length; i++) {
+    chosenId = localData[i].fid;
     // 判斷：是否有預選id，有的話欲渲染片單的HTML變灰色
     const clickedHTML = document.querySelector('#' + chosenId);
     if (clickedHTML != null) clickedHTML.style.color = '#EA5136';
@@ -112,9 +128,9 @@ function chooseFavorite(clickedId) {
   const clickedHTML = document.querySelector('#' + clickedId);
 
   // 檢查：瀏覽器暫存片單(obj)所有資料
-  for (i = 0; i < filmFavoriteData.length; i++) {
+  for (i = 0; i < localData.length; i++) {
     // 判斷：是否有已點擊的id這部
-    if (clickedId == filmFavoriteData[i].fid) {
+    if (clickedId == localData[i].fid) {
       current_i = i;
       check = '已經有這部片';
       break;
@@ -123,14 +139,14 @@ function chooseFavorite(clickedId) {
 
   // 判斷：瀏覽器暫存片單(obj)中是否有這部，決定push或刪除一筆瀏覽器暫存片單(obj)的資料
   if (check == '已經有這部片') {
-    filmFavoriteData.splice(current_i, 1);
-    localStorage.setItem('片單', JSON.stringify(filmFavoriteData));
+    localData.splice(current_i, 1);
+    localStorage.setItem('片單', JSON.stringify(localData));
     // 渲染：已選片單變回灰色
     const clickedHTML = document.querySelector('#' + clickedId);
     clickedHTML.style.color = 'rgba(0, 0, 0, 0.2)';
   } else if (check == '還沒有這部片') {
-    filmFavoriteData.push({ fid: clickedId });
-    localStorage.setItem('片單', JSON.stringify(filmFavoriteData));
+    localData.push({ fid: clickedId });
+    localStorage.setItem('片單', JSON.stringify(localData));
     // 渲染：已選片單變紅色
     showClicked();
   }
