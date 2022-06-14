@@ -88,10 +88,11 @@ function showFilmAmount() {
 }
 showFilmAmount();
 
-// 函式：載入時，已選片單變灰色
+// 函式：載入時，已選片單變紅色
 function showClicked() {
   // 變數：載入時，預選的id；預設為空值
-  let chosenId = '';
+  let chosenId = localStorage.getItem('片單').full_id;
+  console.log(chosenId);
 
   // 檢查：瀏覽器暫存片單(obj)所有資料
   for (i = 0; i < filmFavoriteData.length; i++) {
@@ -124,13 +125,13 @@ function chooseFavorite(clickedId) {
   if (check == '已經有這部片') {
     filmFavoriteData.splice(current_i, 1);
     localStorage.setItem('片單', JSON.stringify(filmFavoriteData));
-    // 渲染：已選片單變黑色
+    // 渲染：已選片單變回灰色
     const clickedHTML = document.querySelector('#' + clickedId);
     clickedHTML.style.color = 'rgba(0, 0, 0, 0.2)';
   } else if (check == '還沒有這部片') {
     filmFavoriteData.push({ fid: clickedId });
     localStorage.setItem('片單', JSON.stringify(filmFavoriteData));
-    // 渲染：未選片單變灰色
+    // 渲染：已選片單變紅色
     showClicked();
   }
 
