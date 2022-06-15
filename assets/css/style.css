@@ -457,9 +457,11 @@ header .title__container .ZHtitle__contaitner .ZHtitle__line {
 }
 
 .footer {
+  position: relative;
   padding: 40px;
   background-color: #6AB5B9;
   color: #D3D6B1;
+  z-index: 10;
 }
 
 .footer .footer__container {

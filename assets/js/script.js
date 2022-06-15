@@ -1,20 +1,4 @@
-// 渲染加入最愛的資料
-// 變數：取得本機儲存空間
-const localData = JSON.parse(localStorage.getItem('片單'))
-  ? JSON.parse(localStorage.getItem('片單'))
-  : [];
-
-// 函式：載入時，顯示已選片單數量
-function showFilmAmount() {
-  if (localData.length == 0) {
-    document.getElementById('film_amount').style.display = 'none';
-  } else {
-    document.getElementById('film_amount').innerText = localData.length;
-  }
-}
-showFilmAmount();
-
-// 目的：渲染片單到目標位置
+// (1) 渲染所有片單資料
 // 變數：要渲染的片單HTML
 const filmHTML = `
 <section class="film">
@@ -58,12 +42,13 @@ for (i = 0; i < filmList.list.length; i++) {
   $('#' + filmList.list[i].tid).append(currentFilmHTML);
 }
 
+// (2) 影片清單開合
 // 載入時，隱藏除了 id=introduction 以外的區塊
 $(function () {
   $('.film__type').attr('style', 'display: none');
 });
 
-// 開合
+// 開合功能
 let lastThis = '';
 // 函式：點擊.type__title後
 $('.type__title').click(function () {
@@ -91,25 +76,11 @@ $('.type__title').click(function () {
   }
 });
 
-// // 變數：瀏覽器暫存片單(obj)，有的話讀取，沒有的話顯示空的陣列
-// const filmFavoriteData = JSON.parse(localStorage.getItem('片單'))
-//   ? JSON.parse(localStorage.getItem('片單'))
-//   : [];
-
-// console.log(filmFavoriteData);
-
-// // 函式：載入時，顯示已選片單數量
-// function showFilmAmount() {
-//   document.getElementById('film_amount').innerText = filmFavoriteData.length;
-// }
-// showFilmAmount();
-
-// 函式：載入時，已選片單變紅色
+// (3) 載入時，已選片單變紅色
 function showClicked() {
+  const localData = JSON.parse(localStorage.getItem('片單'));
   // 變數：載入時，預選的id；預設為空值
   let chosenId = localStorage.getItem('片單').full_id;
-  console.log(chosenId);
-
   // 檢查：瀏覽器暫存片單(obj)所有資料
   for (i = 0; i < localData.length; i++) {
     chosenId = localData[i].full_id;
@@ -120,8 +91,9 @@ function showClicked() {
 }
 showClicked();
 
-// 函式：當點擊愛心時，影片加入我的片單
+// (4) 當點擊愛心時，影片加入我的片單
 function chooseFavorite(clickedId) {
+  const localData = JSON.parse(localStorage.getItem('片單'));
   // 變數：設定(1)檢查片單存在與否的i、(2)片單存在狀態、(3)欲渲染片單的HTML
   let current_i = -1;
   let check = '還沒有這部片';
