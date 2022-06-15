@@ -124,5 +124,10 @@ function chooseFavorite(clickedId) {
   }
 
   // 渲染：顯示已選片單數量
-  showFilmAmount();
+  if (localData.length == 0) {
+    document.getElementById('film_amount').style.opacity = '0';
+  } else {
+    document.getElementById('film_amount').style.opacity = '1';
+    document.getElementById('film_amount').innerText = localData.length;
+  }
 }
